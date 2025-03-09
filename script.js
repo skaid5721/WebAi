@@ -16,7 +16,7 @@ document.getElementById("siteForm").addEventListener("submit", async function(ev
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": "Bearer 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"
+                "Authorization": "Bearer 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"
             },
             body: JSON.stringify({
                 model: "gpt-4",
@@ -31,4 +31,36 @@ document.getElementById("siteForm").addEventListener("submit", async function(ev
         resultDiv.innerHTML = "<p>Błąd podczas generowania strony.</p>";
         console.error(error);
     }
+});
+document.getElementById("siteForm").addEventListener("submit", async function(event) {
+    event.preventDefault();
+
+    const companyName = document.getElementById("companyName").value;
+    const businessDesc = document.getElementById("businessDesc").value;
+    const domainName = document.getElementById("domainName").value.trim();
+    const resultDiv = document.getElementById("generatedPage");
+    const domainCheckResult = document.getElementById("domainCheckResult");
+
+    resultDiv.innerHTML = "Generowanie strony...";
+    domainCheckResult.innerHTML = "Sprawdzanie dostępności domeny...";
+
+    // Sprawdzenie dostępności domeny
+    try {
+        const response = await fetch(`https://api.api-ninjas.com/v1/dnslookup?domain=${domainName}.pl`, {
+            method: "GET",
+            headers: { "X-Api-Key": "KJqBMpPWt7/Kn910jJ0AjA==eWc8mAf8ugotum0B" }
+        });
+
+        const data = await response.json();
+        if (data.error) {
+            domainCheckResult.innerHTML = `<p style="color: green;">Domena ${domainName}.pl jest dostępna!</p>`;
+        } else {
+            domainCheckResult.innerHTML = `<p style="color: red;">Domena ${domainName}.pl jest już zajęta.</p>`;
+        }
+    } catch (error) {
+        domainCheckResult.innerHTML = "<p>Błąd podczas sprawdzania domeny.</p>";
+        console.error(error);
+    }
+
+    // Generowanie treści strony (KJqBMpPWt7/Kn910jJ0AjA==eWc8mAf8ugotum0B)
 });
