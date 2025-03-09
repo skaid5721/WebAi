@@ -12,10 +12,11 @@ document.getElementById("siteForm").addEventListener("submit", async function(ev
 
     try {
         const response = await fetch("https://api.openai.com/v1/completions", {
+       
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": "Bearer TWÓJ_KLUCZ_API"
+                "Authorization": "Bearer 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"
             },
             body: JSON.stringify({
                 model: "gpt-4",
