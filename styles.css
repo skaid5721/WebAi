@@ -59,3 +59,9 @@ button {
     background-color: #e8f0fe;
     border-radius: 5px;
 }
+small {
+    display: block;
+    color: gray;
+    margin-top: -10px;
+    font-size: 0.9em;
+}
