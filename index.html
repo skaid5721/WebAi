@@ -41,3 +41,17 @@
     <script src="script.js"></script>
 </body>
 </html>
+<form id="siteForm">
+    <label for="companyName">Nazwa firmy:</label>
+    <input type="text" id="companyName" required>
+
+    <label for="businessDesc">Opis działalności:</label>
+    <textarea id="businessDesc" required></textarea>
+
+    <label for="domainName">Sprawdź dostępność domeny:</label>
+    <input type="text" id="domainName" placeholder="np. mojadomena" required>
+    <small>twojadomena.pl</small>
+
+    <button type="submit">Generuj stronę</button>
+</form>
+<div id="domainCheckResult"></div>
