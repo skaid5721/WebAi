@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Website Builder - Tworzenie Stron</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>AI Website Builder</h1>
+        <p>Tworzymy nowoczesne strony internetowe w kilka minut dzięki sztucznej inteligencji!</p>
+        <a href="#generate" class="cta-button">Stwórz stronę</a>
+    </header>
+
+    <section class="about">
+        <h2>Jak to działa?</h2>
+        <p>Wprowadź nazwę firmy i opis jej działalności, a nasza sztuczna inteligencja wygeneruje dla Ciebie profesjonalną stronę internetową!</p>
+    </section>
+
+    <section id="generate" class="generator">
+        <h2>Wygeneruj swoją stronę</h2>
+        <form id="siteForm">
+            <label for="companyName">Nazwa firmy:</label>
+            <input type="text" id="companyName" required>
+            
+            <label for="businessDesc">Opis działalności:</label>
+            <textarea id="businessDesc" required></textarea>
+            
+            <button type="submit">Generuj stronę</button>
+        </form>
+
+        <div id="generatedPage" class="result"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 AI Website Builder. Wszystkie prawa zastrzeżone.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
